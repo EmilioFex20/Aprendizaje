@@ -1,0 +1,153 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    font-family: 'Arial', sans-serif;
+}
+
+canvas {
+    border: 2px solid #ccc;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+
+.controls {
+    position: absolute;
+    top: 70px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    background-color: rgba(255,255,255,0.9);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode{
+    background-color: #2b2b2b;
+    color: white;
+}
+
+.dark-mode canvas{
+    border: 2px solid #fff;
+}
+
+.dark-mode .controls{
+    background-color: rgba(50,50,50,0.9);
+}
+#myCanvas {
+    border: 1px solid black; /* Borde para el canvas */
+    cursor: crosshair;       /* Cambiar el cursor para indicar dibujo */
+}
+
+input, select{
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+button, select, input[type="color"], input[type="number"] {
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    background-color: #f0f0f0;
+    transition: background-color 0.3s ease;
+}
+
+button:hover, select:hover, input[type="color"]:hover, input[type="number"]:hover {
+    background-color: #ddd;
+    cursor: pointer;
+}
+
+button {
+    color: white;
+    background-color: #5a9;
+    border: none;
+    font-size: 16px;
+    transition: transform 0.2s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+/* Navbar Styles */
+.navbar{
+    background-color: #f4f4f4;
+    position: fixed;
+    top: 0px;
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: #2b2b2b;
+}
+  
+  
+/* Hidden Section */
+.hidden {
+    display: none;
+  }
+  
+  /* Gallery Styles */
+.gallery {
+    display: grid; /* Usa CSS Grid para organizar las imágenes */
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Columnas flexibles */
+    gap: 15px; /* Espaciado entre imágenes */
+    padding: 10px; /* Espaciado interno para la galería */
+  }
+  
+  .gallery img {
+    width: 100%; /* Asegura que las imágenes ocupen el espacio de su celda */
+    height: auto; /* Mantiene la proporción de la imagen */
+    border: 2px solid #ccc; /* Borde alrededor de cada imagen */
+    border-radius: 5px; /* Bordes ligeramente redondeados */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para darle un efecto elevado */
+    transition: transform 0.2s ease-in-out; /* Efecto de interacción */
+  }
+  
+  .gallery img:hover {
+    transform: scale(1.05); /* Amplía un poco la imagen al pasar el cursor */
+  }
+
+  /* Estilo del modal */
+.modal {
+    display: none; /* Oculta el modal por defecto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white; /* Fondo semitransparente */
+    justify-content: center;
+    align-items: center;
+    z-index: 2000; /* Encima de todo */
+  }
+  
+  .modal-content {
+    max-width: 80%; /* Limita el ancho de la imagen */
+    max-height: 80%; /* Limita la altura de la imagen */
+    border: 2px solid #fff;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+  }
+  
+  .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    z-index: 3000;
+    transition: color 0.2s;
+  }
+  
+  .close:hover {
+    color: #ff6b6b; /* Cambia el color al pasar el cursor */
+  }
+  

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paint con Canvas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <ul class="navbar">
+        <li>CreativeFlow</li>
+        <li><a href="#" id="paintMenu">Paint</a></li>
+        <li><a href="#" id="galleryMenu">Galeria</a></li>
+    </ul>
+    <div id="paintSection" class="section">
+        <h2>PAINT</h2>
+        <div class="controls"> 
+            <label for="drawMode"> Modo de dibujo: </label>
+            <select id="drawMode">
+                <option value = "free"> Dibujo libre </option>
+                <option value = "line"> Linea recta </option>
+                <option value = "circle"> Circulo </option>
+                <option value = "rectangle"> Rectángulo </option>
+                <option value = "drawBezierQuadratic"> Curva de Bezier Cúbica </option>
+                <option value = "drawBezierCubic"> Curva de Bezier Cuadrática </option>
+    
+            </select>
+            <label for="fillShape"> Rellenar figuras </label>
+        <input type="checkbox" id="fillShape">
+    
+            <label for = "colorPicker"> Color: </label>
+            <input type = "color" id="colorPicker" value="#000000">
+            <div id="colorDisplay" class="color-display"></div>
+            <div id="strokePreview" class="stroke-preview"></div>
+            <div id="preview" style="width: 40px; height: 40px; background-color: #000000; border-radius: 50%;"></div>
+            <label for = "lineWidth"> Grosor: </label>
+            <input type = "number" id = "lineWidth" value="2" min="1" max="20">
+            <button id="clearCanvas">Borrar lienzo</button>
+            <button id="downloadImage"> Descargar imagen</button>
+            <button id="saveImage"> Subir a galeria</button>
+            <button id="toggleDarkMode"> Modo Obscuro </button>
+        </div>
+        <canvas id="myCanvas" width="800" height="600"></canvas> 
+    </div>
+
+    <div id="gallerySection" class="section hidden">
+        <h1>Galeria</h1>
+        <div class="gallery" id="gallery"></div>
+      </div>
+      <div id="imageModal" class="modal hidden">
+        <span id="closeModal" class="close">&times;</span>
+        <img id="modalImage" class="modal-content" alt="Expanded View">
+      </div>
+    <script src="script.js"></script>
+</body>
+</html>
